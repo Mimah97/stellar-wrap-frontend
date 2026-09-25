@@ -32,6 +32,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {plausibleDomain && (
           <Script
             strategy="afterInteractive"
@@ -40,7 +41,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           />
         )}
       </head>
-      <body>
+      <body className="min-h-screen overflow-x-hidden antialiased">
         <SkipNavigation />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
